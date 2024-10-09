@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BiodataController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -10,6 +11,5 @@ Route::resource('/menus', \App\Http\Controllers\MenuController::class)->paramete
     'menus' => 'id_menu'
 ]);
 
-
-Route::get('/menus/{id_menu}', [MenuController::class, 'show'])->name('menus.show');
+Route::resource('biodatas', BiodataController::class);
 
